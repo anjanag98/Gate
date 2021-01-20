@@ -61,10 +61,7 @@ jobs:
         elif [ "${{ matrix.os }}" == "macos-latest" ]; then
           brew update
           brew install  qt5 \
-                        ccache \
-                        fftw \
-                        libomp \
-                        wget
+                        ccache
           brew link qt5 --force && sudo ln -s /usr/local/opt/qt/mkspecs /usr/local/mkspecs && sudo ln -s /usr/local/opt/qt/plugins /usr/local/plugins
           export PATH=/usr/local/opt/qt/bin:$PATH
           export LDFLAGS="-L/usr/local/opt/qt/lib -L/usr/local/opt/llvm/lib"
